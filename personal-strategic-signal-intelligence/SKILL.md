@@ -251,6 +251,14 @@ Do not claim to know what the user will decide.
 
 **Purpose:** Make productive contradictions visible and force competing hypotheses to face the same evidence.
 
+Use this configurable hybrid entry policy by default:
+
+- **Explicit decisions enter automatically.** When the user clearly marks an item as a decision, add it to Decision Court without requiring a separate nomination approval.
+- **Inferred high-stakes candidates require approval.** When the system infers that a potentially high-stakes decision is emerging, nominate it with a short source-grounded rationale and wait for the user's approval before running the full Decision Court analysis.
+- **Ordinary activity is not a decision.** Do not treat routine conversations, questions, tasks, notes, or to-dos as decisions merely because they may have strategic relevance. They enter only when the user explicitly marks them as decisions or approves a nomination.
+
+The user may configure the decision labels, stakes threshold, nomination format, and auto-entry scope. Unless configured otherwise, preserve the distinction above and apply the existing privacy, lineage, and authorization rules.
+
 Procedure:
 
 1. State the apparent contradiction neutrally.
