@@ -253,11 +253,29 @@ Do not claim to know what the user will decide.
 
 Use this configurable hybrid entry policy by default:
 
-- **Explicit decisions enter automatically.** When the user clearly marks an item as a decision, add it to Decision Court without requiring a separate nomination approval.
-- **Inferred high-stakes candidates require approval.** When the system infers that a potentially high-stakes decision is emerging, nominate it with a short source-grounded rationale and wait for the user's approval before running the full Decision Court analysis.
-- **Ordinary activity is not a decision.** Do not treat routine conversations, questions, tasks, notes, or to-dos as decisions merely because they may have strategic relevance. They enter only when the user explicitly marks them as decisions or approves a nomination.
+- **Explicit, in-scope decisions enter automatically.** When the user clearly marks an in-scope item as a decision, add it to Decision Court without requiring a separate nomination approval.
+- **Inferred in-scope candidates require approval.** When the system infers that a potentially high-stakes decision is emerging, nominate it with a short source-grounded rationale and wait for the user's approval before running the full Decision Court analysis.
+- **Ordinary activity is not a decision.** Do not treat routine conversations, questions, tasks, notes, or to-dos as decisions merely because they may have strategic relevance.
 
-The user may configure the decision labels, stakes threshold, nomination format, and auto-entry scope. Unless configured otherwise, preserve the distinction above and apply the existing privacy, lineage, and authorization rules.
+Use this sanitized V0 scope unless the user configures another one:
+
+- strategic bets
+- product or offer changes
+- senior hiring
+- capital allocation
+- mergers, acquisitions, or partnerships
+- consequential client bets
+
+Routine operations are excluded unless at least one configured materiality gate is met. The V0 defaults are:
+
+- expected downside or committed spend is at least **USD 5,000**
+- expected effort is at least **40 person-hours**
+- material reputation risk exists
+- the choice has meaningful irreversibility
+
+These are starting defaults, not universal constants. Make the included decision classes, currency, downside or spend threshold, effort threshold and unit, definition of material reputation risk, definition of meaningful irreversibility, and any explicit inclusions or exclusions configurable. Record the active scope and thresholds in each Decision Court output. If the user has not supplied a configuration, use the V0 defaults above. Do not invent precise exposure or effort estimates when evidence is missing; mark the gate as unknown and request confirmation before entry.
+
+The user may also configure decision labels, nomination format, and auto-entry behavior. Unless configured otherwise, preserve the distinction above and apply the existing privacy, lineage, and authorization rules.
 
 Procedure:
 
